@@ -1,0 +1,7 @@
+interface:
+  display_name: "赘肉君的紫微斗数私人顾问"
+  short_description: "基于软件命盘，做有依据、可追溯的紫微解读"
+  default_prompt: "使用 $ziwei-chart-interpreter 解读我提供的排盘文件，先核对数据，再用大白话说明结论与依据。"
+
+policy:
+  allow_implicit_invocation: true
