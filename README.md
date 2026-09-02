@@ -43,7 +43,7 @@ https://github.com/fjyazsw-eng/ziwei-chart-interpreter
 - **运限分层处理**：先看本命，再看大限，最后看流年触发；
 - **时间盘先算后断**：涉及年份时先生成完整大限、流年十二宫和三层叠宫表；
 - **统一交互档位**：只交盘时简短确认，快速问题简答，专题问题标准分析，明确要求时才输出深度报告；
-- **控制幻觉**：不重新排盘，不补造流月、流日或软件没有提供的信息；
+- **控制幻觉**：不重新排盘；流月、流日只在农历、斗君、闰月、边界和月日干支可校验时补全；
 - **允许验证**：可以回推历史高关注年份，但不根据用户反馈倒推圆故事。
 
 ## 它能做什么
@@ -66,10 +66,11 @@ https://github.com/fjyazsw-eng/ziwei-chart-interpreter
 - 事业、职称、考试与学业；
 - 财务模式与资源压力；
 - 桃花、恋爱、婚姻与关系互动；
+- 正缘画像、恋爱启动与适合投入的时间差异；
 - 同事、人际、团队与合作；
 - 家庭、住房、搬迁与外地发展；
 - 健康压力与生活管理倾向；
-- 某一年或一段时间的大限、流年趋势。
+- 某一年或一段时间的大限、流年、流月、流日趋势。
 
 ### 大限与流年应期
 
@@ -94,7 +95,7 @@ https://github.com/fjyazsw-eng/ziwei-chart-interpreter
 - 流年落宫；
 - 数据来自软件直出还是规则派生。
 
-它不会由此继续补造软件未提供的流昌流曲、流羊陀、宫干飞化、自化路线、流月或流日。
+流月、流日若资料齐全，可按可校验的斗君与流日公式补全宫位，并由软件/历法工具给出的月干、日干补出十干四化。它不会继续补造流昌流曲、流羊陀、宫干飞化或自化路线；边界或闰月口径不明时会停止补全。
 
 ## 如何使用
 
@@ -170,6 +171,7 @@ https://github.com/fjyazsw-eng/ziwei-chart-interpreter
 - 不诊断疾病、不推断寿命、不提供投资指令；
 - 不保证某年一定结婚、升职、发财、搬家或生育；
 - 没有流月数据时，不把年份判断伪装成具体月份；
+- 没有通过流月流日校验时，不把日期判断伪装成精确应期；
 - 用户提供的经历只用于验证，不用于强行圆回原结论。
 
 ## 隐私建议
@@ -184,15 +186,20 @@ ziwei-chart-interpreter/
 ├── README.md
 ├── agents/
 │   └── openai.yaml
-└── references/
+├── references/
     ├── derivation-rules.md
     ├── evidence-rules.md
+    ├── health-symbolism.md
     ├── input-schema.md
     ├── interaction-modes.md
+    ├── month-day-rules.md
     ├── output-template.md
+    ├── relationship-methods.md
     ├── time-qa.md
     ├── timing-rules.md
     └── topic-paths.md
+└── scripts/
+    └── derive_month_day.py
 ```
 
 内部技术标识继续使用 `ziwei-chart-interpreter`，便于安装与调用；界面和文档展示名称统一为“赘肉君的紫微斗数私人顾问”。
